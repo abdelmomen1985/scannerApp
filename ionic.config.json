@@ -1,0 +1,7 @@
+{
+  "name": "corproApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
