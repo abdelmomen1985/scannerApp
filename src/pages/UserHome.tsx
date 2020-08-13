@@ -103,6 +103,14 @@ export default function UserHome() {
           </IonButton>
 
           <IonButton
+            expand="block"
+            className="ion-margin-top"
+            routerLink="/pda_scanner"
+            size="large"
+          >
+            PDA Scanner
+          </IonButton>
+          <IonButton
             className="ion-margin-top"
             color="danger"
             expand="block"

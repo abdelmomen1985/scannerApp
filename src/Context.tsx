@@ -21,7 +21,7 @@ const initialState = {
     : null,
   loggedIn: false,
   setCurrentLang: (lang: string) => {},
-  setUserData: (user: UserType) => {},
+  setUserData: (user: UserType | null) => {},
   setAppData: (data: AppDataType) => {},
 };
 
@@ -62,8 +62,8 @@ function CtxtProvider(props: any) {
     dispatch({ currentLang: lang, type: ACTION_TYPES.CHANGE_CURRENT_LANG });
   }
 
-  function setUserData(user: UserType) {
-    localStorage.setItem("UserData", JSON.stringify(user));
+  function setUserData(user: UserType | null) {
+    if (user) localStorage.setItem("UserData", JSON.stringify(user));
     dispatch({ user, type: ACTION_TYPES.USER_LOGGED_IN });
   }
 

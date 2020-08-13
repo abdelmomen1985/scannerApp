@@ -30,6 +30,16 @@ const Home: React.FC = () => {
   const [branches, setBranches] = useState<Branch[]>([]);
   const [selectedBranchId, setSelectedBranchId] = useState(null);
 
+  React.useEffect(() => {
+    if (localStorage.getItem("UserData")) {
+      // will get to here if user got updated
+      history.replace("/rfid_home");
+    } else {
+      history.replace("/login");
+    }
+    console.log("My Home");
+  }, []);
+
   const doLogin = async (e: SyntheticEvent) => {
     e.preventDefault();
     const { username, password, selectedBranchId } = e.target as any;
@@ -59,7 +69,7 @@ const Home: React.FC = () => {
         console.error(error);
       });
   };
-
+  /*
   React.useEffect(() => {
     if (localStorage.getItem("UserData")) {
       // will get to here if user got updated
@@ -77,6 +87,7 @@ const Home: React.FC = () => {
     };
     if (!branches.length) getBranches();
   }, [history, branches, user]);
+  */
 
   return (
     <IonPage>

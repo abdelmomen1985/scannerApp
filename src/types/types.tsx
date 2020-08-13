@@ -8,6 +8,18 @@ export type UserType = {
   Deleted: string;
 };
 
+export type LogItemType = {
+  Tag: string;
+  Acknowledge: "0" | "1";
+  Status: "0" | "1";
+  ItemId: string;
+  ArabicDescription: string;
+  Code: string;
+  ItemImage: string;
+  UpdatedBy: string;
+  CreatedDate: string;
+};
+
 export type AppDataType = {
   Banners: [{ Image: string; Name: string; Id: number }];
   ContactUs: {

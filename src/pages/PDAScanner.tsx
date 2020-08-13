@@ -16,9 +16,8 @@ import { useHistory } from "react-router-dom";
 import { AppCtxt } from "../Context";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import { removeCircleOutline, arrowForwardSharp } from "ionicons/icons";
-export default function Scanner() {
+export default function PDAScanner() {
   const history = useHistory();
-  const { user } = React.useContext(AppCtxt);
 
   const [barCodes, setBarCodes] = useState<string[]>([]);
   const openScanner = async () => {
@@ -64,7 +63,7 @@ export default function Scanner() {
               }}
             />
           </IonButtons>
-          <IonTitle className="ion-text-center">مسح الاكواد</IonTitle>
+          <IonTitle className="ion-text-center"> PDA Scanner</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-text-center">
@@ -85,9 +84,7 @@ export default function Scanner() {
               </IonRow>
             ))}
           </div>
-          <IonButton expand="block" onClick={openScanner} size="large">
-            Scan
-          </IonButton>
+
           {barCodes.length > 0 && (
             <IonButton
               expand="block"
